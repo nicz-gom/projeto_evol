@@ -1,0 +1,24 @@
+{
+  "name": "projeto_evol",
+  "version": "1.0.0",
+  "description": "Projeto para aprendizado de programação web. Site gameficado com controle de metas para o usuário. O intuito é ajudar as pessoas a terem mais foco.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicz-gom/projeto_evol.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nicz-gom/projeto_evol/issues"
+  },
+  "homepage": "https://github.com/nicz-gom/projeto_evol#readme",
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
+}
