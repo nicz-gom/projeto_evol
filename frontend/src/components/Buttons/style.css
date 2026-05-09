@@ -1,0 +1,9 @@
+button:hover{
+   background-color: var(--hoverBt); 
+   transform: scale(1.1);
+   transition: 0.5s;
+}
+
+button:focus{
+    border: none;
+}
