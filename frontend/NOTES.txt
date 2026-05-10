@@ -1,0 +1,1 @@
+10-05-2026: O próximo passo é fazer a validação dos formulários de login e cadastro
