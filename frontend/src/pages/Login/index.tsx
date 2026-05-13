@@ -8,9 +8,6 @@ import ValidationMessage from "../../components/validation";
 
 import React from "react";
 
-import ValidateEmail from "../../utils/validateEmail";
-import ValidadePassword from "../../utils/validatePassword";
-
 import "./style.css";
 
 import { Link } from "react-router-dom";
@@ -21,25 +18,51 @@ function Login(){
     const [password, setPassword] = React.useState("");
     const [error, setError] = React.useState("");
 
+    function validateEmail(): string {
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email) {
+            return "Email é obrigatório";
+        }
+
+        if (!emailRegex.test(email)) {
+            return "Email inválido";
+        }
+
+        return "";
+    }
+
+    function validatePassword(): string {
+
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+        if (!password) {
+            return "Senha é obrigatória";
+        }   
+
+        if (password.length < 6) {
+            return "A senha deve conter no mínimo 6 caracteres";
+        }   
+
+        if (!passwordRegex.test(password)) {
+            return "A senha deve conter pelo menos uma letra e um número";
+        }
+
+        return "";
+
+    }
+
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        const emailError = ValidateEmail(email);
-        const passwordError = ValidadePassword(password);
+        const emailError = validateEmail();
+        const passwordError = validatePassword();
 
-        if (emailError) {
-            setError(emailError);
-            return;       
-        }
-
-        if (passwordError) {
-            setError(passwordError);
+        if (emailError || passwordError) {
+            setError(emailError || passwordError);
             return;
-        }
-
-        setError("");
-        alert("Login bem-sucedido!");
-
+        }   
     }
 
     return (
@@ -58,7 +81,7 @@ function Login(){
                     <Inputs label="Email:" input="text" placeholder="Digite seu email" required />
                     <Inputs label="Senha:" input="password" placeholder="Digite sua senha" required />
                 </section>
-                <Button text="Entrar" onClick={handleSubmit} />
+                <Button text="Entrar" type="submit" />
                 <span style={{color: Colors.White, fontSize: Fonts.pequeno}}>Não possui uma conta? <Link to="/register" style={{color: Colors.Info, textDecoration: 'underline'}}>Registrar-se</Link></span>
                 <div className="validation" >
                     {error && <ValidationMessage message={error} />}
