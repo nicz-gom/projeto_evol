@@ -59,10 +59,13 @@ function Login(){
         const emailError = validateEmail();
         const passwordError = validatePassword();
 
-        if (emailError || passwordError) {
+        if (emailError !== "" || passwordError !== "") { 
             setError(emailError || passwordError);
             return;
-        }   
+        } 
+
+        setError("");
+        console.log("entrei aqui!");  
     }
 
     return (
@@ -71,19 +74,33 @@ function Login(){
             <div className="BlackCircle shape-2" aria-hidden="true"><Icon className="icon-books" style={{color: Colors.Danger}}>books</Icon></div>
             <div className="BlackCircle shape-3" aria-hidden="true"><Icon className="icon-analytics" style={{color: Colors.Warning}}>analytics</Icon></div>
 
-            <form onSubmit={handleSubmit} style={{height: '350px', width: '40%', backgroundColor: Colors.Black, padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '20px', position: 'relative', left: '-250px', top: '50px', zIndex: 2}}>
+            <form noValidate onSubmit={handleSubmit} style={{height: '350px', width: '40%', backgroundColor: Colors.Black, padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '20px', position: 'relative', left: '-250px', top: '50px', zIndex: 2}}>
                 <section style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
                     <span style={{backgroundColor: Colors.White, width: '100%', height: '2px', marginLeft: '35px', marginRight: '15px'}}></span>
                     <h1>Evol</h1>
                     <span style={{backgroundColor: Colors.White, width: '100%', height: '2px', marginRight: '35px', marginLeft: '15px'}}></span>
                 </section>
                 <section style={{ width: '100%', display: 'flex', flexDirection: 'column'}}>
-                    <Inputs label="Email:" input="text" placeholder="Digite seu email" required />
-                    <Inputs label="Senha:" input="password" placeholder="Digite sua senha" required />
+                    <Inputs
+                        label="Email:"
+                        input="text"
+                        placeholder="Digite seu email"
+                        required
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                    />
+                    <Inputs
+                        label="Senha:"
+                        input="password"
+                        placeholder="Digite sua senha"
+                        required
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
                 </section>
                 <Button text="Entrar" type="submit" />
                 <span style={{color: Colors.White, fontSize: Fonts.pequeno}}>Não possui uma conta? <Link to="/register" style={{color: Colors.Info, textDecoration: 'underline'}}>Registrar-se</Link></span>
-                <div className="validation" >
+                <div className="validation" style={{height: "20px", paddingTop: "10px", display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
                     {error && <ValidationMessage message={error} />}
                 </div>
             </form>

@@ -1,2 +1,3 @@
 10-05-2026: O próximo passo é fazer a validação dos formulários de login e cadastro
 13-05-2026: Compreender os elementos para validação (ex: preventDefault())
+04-06-2026: finalização da valição dos forms de login, agora é o backend
