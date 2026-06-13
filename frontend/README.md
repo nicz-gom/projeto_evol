@@ -34,3 +34,8 @@ O sistema é pensado para quem deseja evoluir pessoalmente, oferecendo suporte p
 - adicionar dashboard de progresso
 - integrar dados entre front-end e back-end
 - criar funcionalidade de acompanhamento diário
+
+## Convenções de nomenclatura
+
+- **Banco de dados:** Nomes em SNAKE_CASE (MAIÚSCULO) para tabelas e colunas, por exemplo `USERS`, `USER_ID`.
+- **Código / Projeto:** Identificadores em camelCase (minúsculo inicial) para variáveis, funções e propriedades, por exemplo `userId`, `createdAt`.
