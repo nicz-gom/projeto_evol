@@ -35,5 +35,6 @@ O sistema é pensado para quem deseja evoluir pessoalmente, oferecendo suporte p
 - integrar dados entre front-end e back-end
 - criar funcionalidade de acompanhamento diário
 
-## Modelo da tela Home
+## Modelo da tela Home 
+- Local (https://canva.link/g1qovzjrcpt6xz5)
 <img width="594" height="332" alt="image" src="https://github.com/user-attachments/assets/6941399f-859a-4665-aa3b-70e459ee9aee" />
