@@ -36,5 +36,5 @@ O sistema é pensado para quem deseja evoluir pessoalmente, oferecendo suporte p
 - criar funcionalidade de acompanhamento diário
 
 ## Modelo da tela Home 
-- Local (https://canva.link/g1qovzjrcpt6xz5)
+- Local ([https://canva.link/g1qovzjrcpt6xz5](https://canva.link/5l7zs9ucaeyrj7l))
 <img width="594" height="332" alt="image" src="https://github.com/user-attachments/assets/6941399f-859a-4665-aa3b-70e459ee9aee" />
