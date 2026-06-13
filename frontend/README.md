@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# Projeto Evol
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto Evol é uma aplicação web voltada para gestão de progresso pessoal e construção de bons hábitos. O objetivo do projeto é ajudar usuários a se desenvolverem de forma contínua, oferecendo uma experiência gerencial para acompanhar rotinas, metas e hábitos positivos.
 
-Currently, two official plugins are available:
+## O que já existe
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Interface de login para acesso ao sistema
+- Estrutura básica de páginas e componentes React
+- Sistema inicial de gerenciamento visual para hábitos e progresso
+- Organização do projeto em módulos front-end e back-end
 
-## React Compiler
+## Propósito
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O sistema é pensado para quem deseja evoluir pessoalmente, oferecendo suporte para:
+- definir hábitos saudáveis
+- acompanhar progresso diário
+- administrar metas e resultados
+- manter rotina de desenvolvimento pessoal
 
-## Expanding the ESLint configuration
+## Estrutura do projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `frontend/` contém a aplicação React, estilos, componentes e rotas
+- `backend/` contém a API e lógica de autenticação e serviço
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tecnologias
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React com TypeScript
+- Vite
+- Estrutura modular para facilitar expansão futura
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Próximos passos
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- implementar cadastro de hábitos
+- adicionar dashboard de progresso
+- integrar dados entre front-end e back-end
+- criar funcionalidade de acompanhamento diário
