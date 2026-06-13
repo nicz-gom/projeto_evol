@@ -1,4 +1,5 @@
 # Projeto Evol
+<img width="594" height="332" alt="image" src="https://github.com/user-attachments/assets/6941399f-859a-4665-aa3b-70e459ee9aee" />
 
 Projeto Evol é uma aplicação web voltada para gestão de progresso pessoal e construção de bons hábitos. O objetivo do projeto é ajudar usuários a se desenvolverem de forma contínua, oferecendo uma experiência gerencial para acompanhar rotinas, metas e hábitos positivos.
 
