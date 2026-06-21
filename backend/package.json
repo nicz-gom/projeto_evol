@@ -4,7 +4,11 @@
   "description": "Projeto para aprendizado de programação web. Site gameficado com controle de metas para o usuário. O intuito é ajudar as pessoas a terem mais foco.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "docker": "docker-compose up -d --build",
+    "docker:down": "docker-compose down"
   },
   "repository": {
     "type": "git",
@@ -19,6 +23,8 @@
   },
   "homepage": "https://github.com/nicz-gom/projeto_evol#readme",
   "devDependencies": {
+    "@types/node": "^26.0.0",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.2"
   }
 }
