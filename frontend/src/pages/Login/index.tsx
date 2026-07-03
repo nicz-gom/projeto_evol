@@ -37,7 +37,7 @@ function Login(){
 
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
-        if (!password) {
+        if (!password) {            
             return "Senha é obrigatória";
         }   
 
@@ -65,7 +65,7 @@ function Login(){
         } 
 
         setError("");
-        console.log("entrei aqui!");  
+        alert("entrei aqui!");  
     }
 
     return (
@@ -88,6 +88,7 @@ function Login(){
                         required
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
+                        hasError={Boolean(error && error.includes("Email"))}
                     />
                     <Inputs
                         label="Senha:"
@@ -96,6 +97,7 @@ function Login(){
                         required
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
+                        hasError={Boolean(error && error.includes("Senha"))}
                     />
                 </section>
                 <Button text="Entrar" type="submit" />

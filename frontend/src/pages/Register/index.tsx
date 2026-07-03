@@ -73,6 +73,7 @@ function Register(){
         if (confirmPassword !== password) {
             return "As senhas não coincidem";
         }
+        
         return "";
     }
 
@@ -113,28 +114,36 @@ function Register(){
                         placeholder="Digite seu email" 
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
-                        required />
+                        required 
+                        hasError={Boolean(error && error.includes("Email"))}
+                        />
                     <Inputs 
                         label="Nome:" 
                         input="text" 
                         placeholder="Digite seu nome" 
                         value={name}
                         onChange={(event) => setName(event.target.value)}
-                        required />                    
+                        required 
+                        hasError={Boolean(error && error.includes("Nome"))}
+                        />                    
                     <Inputs 
                         label="Senha:" 
                         input="password" 
                         placeholder="Digite sua senha" 
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
-                        required />
+                        required 
+                        hasError={Boolean(error && error.includes("Senha"))}
+                        />
                     <Inputs 
                         label="Confirmar senha:" 
                         input="password" 
                         placeholder="Confirme sua senha" 
                         value={confirmPassword}
                         onChange={(event) => setConfirmPassword(event.target.value)}
-                        required />                        
+                        required 
+                        hasError={Boolean(error && error.includes("Confirmar senha"))}
+                        />                        
                 </section>
                 <Button text="Cadastrar-se" type="submit"/>
                 <span style={{color: Colors.White, fontSize: Fonts.pequeno}}>Já possui uma conta? <Link to="/login" style={{color: Colors.Info, textDecoration: 'underline'}}>Entrar</Link></span>
