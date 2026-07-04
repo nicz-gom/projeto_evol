@@ -5,6 +5,7 @@ import Button from "../../components/Buttons";
 import Icon from "@mui/material/Icon";
 import Footer from "../../components/footer";
 import ValidationMessage from "../../components/validation";
+import Alert from "../../components/Alert";
 
 import React from "react";
 
@@ -17,6 +18,7 @@ function Login(){
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [error, setError] = React.useState("");
+    const [showAlert, setShowAlert] = React.useState(false);
 
     function validateEmail(): string {
 
@@ -42,11 +44,11 @@ function Login(){
         }   
 
         if (password.length < 6) {
-            return "A senha deve conter no mínimo 6 caracteres";
+            return "Senha deve conter no mínimo 6 caracteres";
         }   
 
         if (!passwordRegex.test(password)) {
-            return "A senha deve conter pelo menos uma letra e um número";
+            return "Senha deve conter pelo menos uma letra e um número";
         }
 
         return "";
@@ -65,11 +67,13 @@ function Login(){
         } 
 
         setError("");
-        alert("entrei aqui!");  
+        setShowAlert(true);
     }
 
     return (
-        <div className="login-page" style={{height: '100vh', width: '100vw', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+        <div style={{height: '100vh', width: '100vw', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+            {showAlert && <Alert message="Login realizado com sucesso!" type="success" duration={3000} onClose={() => setShowAlert(false)} />}
+
             <div className="BlackCircle shape-1" aria-hidden="true"><Icon className="icon-work" style={{color: Colors.Info}}>work</Icon></div>
             <div className="BlackCircle shape-2" aria-hidden="true"><Icon className="icon-books" style={{color: Colors.Danger}}>books</Icon></div>
             <div className="BlackCircle shape-3" aria-hidden="true"><Icon className="icon-analytics" style={{color: Colors.Warning}}>analytics</Icon></div>

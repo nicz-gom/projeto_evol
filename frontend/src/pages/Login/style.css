@@ -70,10 +70,3 @@
 .icon-analytics.MuiIcon-root{
     font-size: 150px;
 }   
-
-.login-page input:-webkit-autofill,
-.login-page input:-webkit-autofill:hover,
-.login-page input:-webkit-autofill:focus {
-  box-shadow: 0 0 0 1000px white inset !important;
-  -webkit-text-fill-color: #000 !important;
-}

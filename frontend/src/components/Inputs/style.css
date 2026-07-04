@@ -1,0 +1,10 @@
+
+/* 
+  Estilo para o input quando o navegador preencher automaticamente com informações salvas (autofill)
+*/
+.inputComponent input:-webkit-autofill,
+.inputComponent input:-webkit-autofill:hover,
+.inputComponent input:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
