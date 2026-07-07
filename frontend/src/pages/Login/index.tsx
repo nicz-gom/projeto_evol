@@ -71,6 +71,7 @@ function Login(){
         setError("");
         setShowAlert(true);
 
+        //temporário: redireciona para a página home após 1 segundo
         setTimeout(() => {
           navigate("../home/index.tsx");
         }, 1000);

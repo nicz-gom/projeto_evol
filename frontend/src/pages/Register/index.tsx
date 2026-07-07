@@ -12,9 +12,11 @@ import React from "react";
 import "./style.css";
 
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Register(){
 
+    const navigate = useNavigate();
     const [email, setEmail] = React.useState("");  
     const [name, setName] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -93,6 +95,11 @@ function Register(){
  
         setError("");
         setShowAlert(true);
+
+        setTimeout(() => {
+            navigate("../login/index.tsx");
+        }, 1000);
+
     }
 
 
