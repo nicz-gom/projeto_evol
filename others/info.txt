@@ -2,3 +2,4 @@ Importante:
 Sobre o banco de dados, o projeto tem um intuito de ser baixado localmente para os 
 usuário que queirão utilizar. Pois é mais seguros, uma vez que haja necessidade de adicionar 
 hábitos que são pessoais, assim não é tão difícil de lidar com a segurança.
+Terminar a integração do front-end e o backend de login

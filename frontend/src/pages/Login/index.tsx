@@ -57,7 +57,7 @@ function Login(){
 
     }
 
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         const emailError = validateEmail();
@@ -68,13 +68,25 @@ function Login(){
             return;
         } 
 
-        setError("");
-        setShowAlert(true);
+        try {
+            const response = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+                });
 
-        //temporário: redireciona para a página home após 1 segundo
-        setTimeout(() => {
-          navigate("../home/index.tsx");
-        }, 1000);
+                const data = await response.json();
+
+                if (!response.ok) {
+                setError(data.message || "Erro no login");
+                return;
+                }
+
+                setShowAlert(true);
+                navigate("/home");
+        } catch (error) {
+            setError("Não foi possível conectar com o servidor");
+        }
        
     }
 

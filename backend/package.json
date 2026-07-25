@@ -24,7 +24,11 @@
   "homepage": "https://github.com/nicz-gom/projeto_evol#readme",
   "devDependencies": {
     "@types/node": "^26.0.0",
+    "@types/pg": "^8.20.0",
     "tsx": "^4.22.4",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "pg": "^8.22.0"
   }
 }
